@@ -3,11 +3,11 @@ name: mailtrap-testing-with-sandbox
 description: Test email sending safely in development and staging using Mailtrap Sandbox. Use when setting up email testing environments, verifying email content without real delivery, or capturing test emails in CI/CD pipelines.
 license: MIT
 metadata:
-  category: business-marketing
+  category: business
   author: mailtrap
   source:
     repository: https://github.com/mailtrap/mailtrap-skills
-    path: skills/testing-with-sandbox/SKILL.md
+    path: skills/testing-with-sandbox
 ---
 
 # Testing Emails with Mailtrap Sandbox
