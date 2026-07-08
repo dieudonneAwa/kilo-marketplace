@@ -3,11 +3,11 @@ name: mailtrap-managing-contacts
 description: Manage email contacts, lists, and segments via the Mailtrap Contacts API. Use when importing contacts, creating contact lists, segmenting audiences, or syncing contacts from a CRM.
 license: MIT
 metadata:
-  category: business-marketing
+  category: business
   author: mailtrap
   source:
     repository: https://github.com/mailtrap/mailtrap-skills
-    path: skills/managing-contacts/SKILL.md
+    path: skills/managing-contacts
 ---
 
 # Managing Contacts with Mailtrap
