@@ -1,6 +1,6 @@
 ---
 name: mailtrap-sending-emails
-description: Send transactional and bulk emails via Mailtrap Email API and SMTP. Use when implementing email sending features, configuring API/SMTP credentials, choosing between transactional and bulk sending, or troubleshooting delivery issues.
+description: Send transactional and bulk emails via Mailtrap Email API and SMTP. Use when implementing mailtrap-based email sending features, configuring API/SMTP credentials, choosing between transactional and bulk sending, or troubleshooting delivery issues.
 license: MIT
 metadata:
   category: business
