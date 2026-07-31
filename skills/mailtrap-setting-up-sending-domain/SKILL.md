@@ -8,6 +8,8 @@ metadata:
   source:
     repository: https://github.com/mailtrap/mailtrap-skills
     path: skills/setting-up-sending-domain
+    license_path: LICENSE
+    commit: 73a7113dbab938f716b8a77b3f63b83a91d8be93
 ---
 
 # Setting Up a Sending Domain with Mailtrap
@@ -26,8 +28,13 @@ This skill covers verifying a sending domain in Mailtrap for production email de
 Mailtrap requires three DNS records to verify your domain:
 
 **SPF** — Authorizes Mailtrap to send on your behalf:
+`v=spf1 include:_spf.mailtrap.io ~all`
+
 **DKIM** — Signs outgoing emails cryptographically:
+`CNAME mailtrap._domainkey [your-dkim-value].dkim.mailtrap.io`
+
 **DMARC** — Sets policy for failed authentication:
+`v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com`
 
 ## Verification Steps
 
