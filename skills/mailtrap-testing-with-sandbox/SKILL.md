@@ -8,6 +8,8 @@ metadata:
   source:
     repository: https://github.com/mailtrap/mailtrap-skills
     path: skills/testing-with-sandbox
+    license_path: LICENSE
+    commit: 73a7113dbab938f716b8a77b3f63b83a91d8be93
 ---
 
 # Testing Emails with Mailtrap Sandbox
