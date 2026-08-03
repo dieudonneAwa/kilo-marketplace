@@ -8,7 +8,6 @@ metadata:
   source:
     repository: https://github.com/mailtrap/mailtrap-skills
     path: skills/managing-contacts
-    license_path: LICENSE
     commit: 73a7113dbab938f716b8a77b3f63b83a91d8be93
 ---
 
@@ -26,7 +25,7 @@ This skill covers managing email contacts, lists, and segments via the Mailtrap 
 ## Creating a Contact
 
 ```javascript
-const response = await fetch("https://mailtrap.io/api/accounts/{account_id}/contacts", {
+const response = await fetch("https://mailtrap.io/api/contacts", {
   method: "POST",
   headers: {
     "Authorization": `Bearer ${process.env.MAILTRAP_API_TOKEN}`,
