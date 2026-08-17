@@ -1,7 +1,6 @@
 ---
 name: mailtrap-setting-up-sending-domain
 description: Verify a sending domain in Mailtrap for production email delivery. Use when setting up DNS records for email sending, configuring SPF, DKIM, and DMARC, or troubleshooting domain verification issues.
-license: MIT
 metadata:
   category: business
   author: mailtrap
