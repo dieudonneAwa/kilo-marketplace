@@ -1,7 +1,6 @@
 ---
 name: mailtrap-authorizing-api-requests
 description: Authenticate API requests to Mailtrap using Bearer tokens. Use when setting up Mailtrap API credentials, configuring environment variables, resolving authentication errors, or managing token scopes.
-license: MIT
 metadata:
   category: business
   author: mailtrap
