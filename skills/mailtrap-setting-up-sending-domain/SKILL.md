@@ -18,23 +18,28 @@ This skill covers verifying a sending domain in Mailtrap for production email de
 ## When to Use This Skill
 
 - Setting up a new sending domain for production email
-- Configuring SPF, DKIM, and DMARC DNS records
+- Configuring Domain Verification, DKIM, and DMARC DNS records
 - Troubleshooting domain verification failures
 - Improving email deliverability
 
 ## Required DNS Records
 
-Mailtrap requires three DNS records to verify your domain:
+Mailtrap generates 5 DNS records to add at your domain registrar when you add a sending domain:
 
-**SPF** — Authorizes Mailtrap to send on your behalf:
-`v=spf1 include:_spf.mailtrap.io ~all`
+**Domain Verification** (CNAME) — proves ownership of the domain. This record also covers your SPF check; you do not need to add a separate SPF record.
+`mt-verify.yourdomain.com` → `xxxxxxx.mailtrap.io`
 
-**DKIM** — Signs outgoing emails cryptographically:
-`CNAME mailtrap._domainkey [your-dkim-value].dkim.mailtrap.io`
+**DKIM** (2× CNAME records) — cryptographically signs outgoing emails so mailbox providers can verify authenticity.
+`mt-dkim1._domainkey.yourdomain.com` → `xxxxxxx.dkim.mailtrap.io`
+`mt-dkim2._domainkey.yourdomain.com` → `xxxxxxx.dkim.mailtrap.io`
 
-**DMARC** — Sets policy for failed authentication:
-`v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com`
+**DMARC** (TXT record) — sets policy for what happens when SPF/DKIM checks fail.
+`_dmarc.yourdomain.com` → `v=DMARC1; p=none; rua=mailto:you@yourdomain.com`
 
+**Custom Tracking Domain** (CNAME, optional) — enables click/open tracking under your own domain.
+
+Exact values are generated per-account — don't hardcode these. Retrieve them via the API:
+`POST https://mailtrap.io/api/accounts/{account_id}/sending_domains`
 ## Verification Steps
 
 1. Add your domain in Mailtrap → Sending → Domains
